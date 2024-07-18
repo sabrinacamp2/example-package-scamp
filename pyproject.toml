@@ -1,15 +1,32 @@
-# contents of pyproject.toml
-
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
 name = "example-package-scamp"
-version = "0.1.0"
+dynamic = ["version"]
 dependencies = [
   "numpy"
+]
+authors = [
+  { name="Sabrina Camp", email="sabrina.camp2@gmail.com" },
+]
+description = "A small example package"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Private :: Do Not Upload",
 ]
 
 [project.optional-dependencies]
 test = ["pytest"]
+
+[project.urls]
+"Homepage" = "https://sabrinacamp2.github.io/example-package-scamp"
+"Source Code" = "https://github.com/sabrinacamp2/example-package-scamp"
+
+[tool.hatch]
+version.path = "src/example_package_scamp/__init__.py"
